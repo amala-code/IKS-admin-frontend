@@ -462,7 +462,7 @@ export const fetchDashboardStats = async () => {
 
 export const fetchamountstatus = async () => {
   try {
-    const response = await axios.get('http://localhost:8001/members/payment-totals')
+    const response = await axios.get('https://iks-admin-backend.vercel.app/members/payment-totals')
 
     const total_amount = response.data
     console.log(total_amount)
@@ -486,7 +486,7 @@ export const fetchCourseRequests = async (page = 1, perPage = 10) => {
   const end = start + perPage
 
   try {
-    const response = await axios.get('http://localhost:8001/all/members')
+    const response = await axios.get('https://iks-admin-backend.vercel.app/all/members')
     
     // Access the 'members' property from the response
     const courseRequests = response.data.members || []
@@ -537,7 +537,7 @@ export const addCourseRequest = async (formData) => {
       year_of_joining: parseInt(formData.yearOfJoining) || 0,
     }
 
-    const response = await axios.post('http://localhost:8001/register_member', requestData)
+    const response = await axios.post('https://iks-admin-backend.vercel.app/register_member', requestData)
     return response.data
   } catch (error) {
     console.error('Failed to register member:', error)
