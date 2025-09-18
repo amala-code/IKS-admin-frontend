@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-d
 import "./App.css"
 import Login from "./components/Login"
 import Dashboard from "./components/Dashboard"
-import Courses from "./components/Courses"
+import NewMember from "./components/Newmember"
 import Students from "./components/Students"
 import Reports from "./components/Reports"
 import Settings from "./components/Settings"
@@ -104,10 +104,10 @@ function App() {
             }
           />
           <Route
-            path="/courses"
+            path="/new-member"
             element={
               <ProtectedRoute>
-                <Courses user={user} onLogout={handleLogout} />
+                <NewMember user={user} onLogout={handleLogout} />
               </ProtectedRoute>
             }
           />

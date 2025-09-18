@@ -80,7 +80,7 @@ const AddCourseRequest = ({ user, onLogout }) => {
       }
   
       // Make API call to register member
-      const response = await axios.post('https://iks-admin-backend.vercel.app/register_member', apiData)
+      const response = await axios.post('http://localhost:8001/register_member', apiData)
       
       if (response.data) {
         // Navigate back to dashboard on success
