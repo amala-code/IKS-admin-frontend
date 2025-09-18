@@ -30,7 +30,7 @@ const Login = ({ onLogin }) => {
 
     try {
       // API call to verify credentials
-      const response = await axios.post('http://localhost:8001/login', {
+      const response = await axios.post('https://iks-admin-backend.onrender.com/login', {
         email,
         password,
       })

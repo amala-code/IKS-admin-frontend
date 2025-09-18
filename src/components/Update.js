@@ -33,7 +33,7 @@ const MemberEditDialog = ({ memberId, isOpen, onClose, onUpdateSuccess }) => {
     
     try {
       // Fetch member by ID
-      const response = await axios.get(`http://localhost:8001/member/${id}`);
+      const response = await axios.get(`https://iks-admin-backend.onrender.com/member/${id}`);
       const memberData = response.data;
       
       setMember(memberData);
@@ -90,7 +90,7 @@ const MemberEditDialog = ({ memberId, isOpen, onClose, onUpdateSuccess }) => {
       }
 
       // This would be your API call
-      // const response = await axios.put(`http://localhost:8001/member/update/${memberId}`, updatePayload);
+      // const response = await axios.put(`https://iks-admin-backend.onrender.com/member/update/${memberId}`, updatePayload);
       
       // Simulating API call
       await new Promise(resolve => setTimeout(resolve, 1000));
@@ -131,7 +131,7 @@ const MemberEditDialog = ({ memberId, isOpen, onClose, onUpdateSuccess }) => {
       }
   
       // Make the actual API call
-      const response = await axios.put(`http://localhost:8001/member/update/${memberId}`, updatePayload);
+      const response = await axios.put(`https://iks-admin-backend.onrender.com/member/update/${memberId}`, updatePayload);
       
       if (response.data.message === "Member updated successfully") {
         if (onUpdateSuccess) {
