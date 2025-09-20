@@ -7,7 +7,7 @@ import Header from "./Header"
 import StatCard from "./StatCard"
 import CourseRequestsTable from "./CourseRequestsTable"
 import "../styles/Dashboard.css"
-import { fetchDashboardStats, fetchCourseRequests, fetchamountstatus } from "../api/api"
+import { fetchDashboardStats, FetchNonMember, fetchamountstatus } from "../api/api"
 
 const NewMember = ({ user, onLogout }) => {
   const navigate = useNavigate()
@@ -32,7 +32,7 @@ const NewMember = ({ user, onLogout }) => {
         setLoading(true)
         // In a real app, these would be API calls
         const statsData = await fetchDashboardStats()
-        const requestsData = await fetchCourseRequests(currentPage)
+        const requestsData = await FetchNonMember(currentPage)
 
         const amountData = await fetchamountstatus()  // renamed
 
@@ -193,13 +193,7 @@ const NewMember = ({ user, onLogout }) => {
                 totalPages={totalPages}
                 onPageChange={handlePageChange}
               />
-                <CourseRequestsTable
-                requests={courseRequests}
-                onStatusChange={handleStatusChange}
-                currentPage={currentPage}
-                totalPages={totalPages}
-                onPageChange={handlePageChange}
-              />
+       
             </div>
           </>
         )}

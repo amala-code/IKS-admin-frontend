@@ -30,7 +30,7 @@ const Login = ({ onLogin }) => {
 
     try {
       // API call to verify credentials
-      const response = await axios.post('https://iks-admin-backend.onrender.com/login', {
+      const response = await axios.post('https://new-admin-backend.vercel.app/login', {
         email,
         password,
       })
